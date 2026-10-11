@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "title": "Practise JavaScript objects",
+    "completed": false,
+    "topic": {
+      "name": "JavaScript",
+      "level": "Beginner"
+    },
+    "mentor": {
+      "name": "Course Mentor",
+      "email": "mentor@example.com"
+    },
+    "schedule": {
+      "dueDate": "2026-10-18",
+      "estimatedMinutes": 45
+    }
+  },
+  {
+    "id": 2,
+    "title": "Learn HTML basics",
+    "completed": true,
+    "topic": {
+      "name": "HTML",
+      "level": "Beginner"
+    },
+    "mentor": {
+      "name": "Course Mentor",
+      "email": "mentor@example.com"
+    },
+    "schedule": {
+      "dueDate": "2026-10-12",
+      "estimatedMinutes": 30
+    }
+  },
+  {
+    "id": 3,
+    "title": "Learn CSS basics",
+    "completed": false,
+    "topic": {
+      "name": "CSS",
+      "level": "Beginner"
+    },
+    "mentor": {
+      "name": "Course Mentor",
+      "email": "mentor@example.com"
+    },
+    "schedule": {
+      "dueDate": "2026-10-19",
+      "estimatedMinutes": 60
+    }
+  },
+  {
+    "id": 4,
+    "title": "Learn Python basics",
+    "completed": false,
+    "topic": {
+      "name": "Python",
+      "level": "Beginner"
+    },
+    "mentor": {
+      "name": "Course Mentor",
+      "email": "mentor@example.com"
+    },
+    "schedule": {
+      "dueDate": "2026-10-20",
+      "estimatedMinutes": 45
+    }
+  },
+  {
+    "id": 5,
+    "title": "Learn React basics",
+    "completed": true,
+    "topic": {
+      "name": "React",
+      "level": "Beginner"
+    },
+    "mentor": {
+      "name": "Course Mentor",
+      "email": "mentor@example.com"
+    },
+    "schedule": {
+      "dueDate": "2026-10-21",
+      "estimatedMinutes": 30
+    }
+  },
+  {
+    "id": 6,
+    "title": "Learn SQL basics",
+    "completed": false,
+    "topic": {
+      "name": "SQL",
+      "level": "Beginner"
+    },
+    "mentor": {
+      "name": "Course Mentor",
+      "email": "mentor@example.com"
+    },
+    "schedule": {
+      "dueDate": "2026-10-22",
+      "estimatedMinutes": 50
+    }
+  }
+]

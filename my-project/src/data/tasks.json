@@ -19,7 +19,7 @@
   {
     "id": 2,
     "title": "Learn HTML basics",
-    "completed": true,
+    "completed": false,
     "topic": {
       "name": "HTML",
       "level": "Beginner"
@@ -70,7 +70,7 @@
   {
     "id": 5,
     "title": "Learn React basics",
-    "completed": true,
+    "completed": false,
     "topic": {
       "name": "React",
       "level": "Beginner"

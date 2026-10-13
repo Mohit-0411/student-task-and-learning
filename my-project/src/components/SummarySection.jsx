@@ -6,17 +6,17 @@ export default function SummarySection({ total, completed, remaining }) {
       <SummaryCard 
         title="Total Tasks" 
         count={total} 
-        bgColor="bg-blue-400" 
+        bgColor="bg-white" 
       />
       <SummaryCard 
         title="Completed" 
         count={completed} 
-        bgColor="bg-emerald-400" 
+        bgColor="bg-white" 
       />
       <SummaryCard 
         title="Remaining" 
         count={remaining} 
-        bgColor="bg-amber-400" 
+        bgColor="bg-white" 
       />
     </div>
   );

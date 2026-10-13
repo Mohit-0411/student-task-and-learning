@@ -30,9 +30,9 @@ export default function TaskItem({ task = {}, onToggleComplete }) {
       </div>
 
       <div className="mt-4 text-xs text-gray-500 flex flex-wrap gap-4 border-t pt-2 border-gray-100">
-        <span>👤 Mentor: <strong>{mentor?.name}</strong> ({mentor?.email})</span>
-        <span>📅 Due: <strong>{formatDate(schedule?.dueDate)}</strong></span>
-        <span>⏱️ Est: <strong>{schedule?.estimatedMinutes} mins</strong></span>
+        <span> Mentor: <strong>{mentor?.name}</strong> ({mentor?.email})</span>
+        <span> Due: <strong>{formatDate(schedule?.dueDate)}</strong></span>
+        <span> Est: <strong>{schedule?.estimatedMinutes} mins</strong></span>
       </div>
     </div>
   );

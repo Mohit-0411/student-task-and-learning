@@ -22,7 +22,7 @@ export default function TaskItem({ task = {}, onToggleComplete }) {
         <button
           onClick={() => onToggleComplete?.(id)}
           className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-            completed ? 'bg-gray-200 text-gray-700 ' : 'bg-green-600 text-white'
+            completed ? 'bg-gray-200 text-gray-700 ' : 'bg-emerald-500 text-white'
           }`}
         >
           {completed ? 'Reopen' : 'Complete'}

@@ -57,7 +57,7 @@ export default function AddTaskForm({ onAddTask }) {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="e.g., Practise JavaScript objects"
-            className="w-full text-sm p-2.5 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            className="w-full text-sm p-2.5 border border-gray-300 rounded-md "
             required
           />
         </div>
@@ -72,7 +72,7 @@ export default function AddTaskForm({ onAddTask }) {
               value={topicName}
               onChange={(e) => setTopicName(e.target.value)}
               placeholder="e.g., JavaScript"
-              className="w-full text-sm p-2.5 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+              className="w-full text-sm p-2.5 border border-gray-300 rounded-md "
               required
             />
           </div>
@@ -84,7 +84,7 @@ export default function AddTaskForm({ onAddTask }) {
             <select
               value={level}
               onChange={(e) => setLevel(e.target.value)}
-              className="w-full text-sm p-2.5 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-white"
+              className="w-full text-sm p-2.5 border border-gray-300 rounded-md bg-white"
             >
               <option value="Beginner">Beginner</option>
               <option value="Intermediate">Intermediate</option>
@@ -103,7 +103,7 @@ export default function AddTaskForm({ onAddTask }) {
               value={mentorName}
               onChange={(e) => setMentorName(e.target.value)}
               placeholder="e.g., Course Mentor"
-              className="w-full text-sm p-2.5 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+              className="w-full text-sm p-2.5 border border-gray-300 rounded-md "
             />
           </div>
 
@@ -116,7 +116,7 @@ export default function AddTaskForm({ onAddTask }) {
               value={mentorEmail}
               onChange={(e) => setMentorEmail(e.target.value)}
               placeholder="e.g., mentor@example.com"
-              className="w-full text-sm p-2.5 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+              className="w-full text-sm p-2.5 border border-gray-300 rounded-md "
             />
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function AddTaskForm({ onAddTask }) {
               type="date"
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
-              className="w-full text-sm p-2.5 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+              className="w-full text-sm p-2.5 border border-gray-300 rounded-md"
               required
             />
           </div>
@@ -145,7 +145,7 @@ export default function AddTaskForm({ onAddTask }) {
               onChange={(e) => setEstimatedMinutes(e.target.value)}
               min="5"
               step="5"
-              className="w-full text-sm p-2.5 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+              className="w-full text-sm p-2.5 border border-gray-300 rounded-md "
               required
             />
           </div>
@@ -153,7 +153,7 @@ export default function AddTaskForm({ onAddTask }) {
 
         <button
           type="submit"
-          className="w-full py-2.5 px-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-md transition-colors shadow-sm"
+          className="w-full py-2.5 px-4 bg-emerald-500 text-white font-medium rounded-md transition-colors shadow-sm"
         >
           Add Task
         </button>

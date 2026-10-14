@@ -27,14 +27,13 @@ export default function ApiTasks() {
   }, []);
 
   return (
-    <div className="bg-white shadow rounded-lg p-6 mb-6 border border-gray-100">
-      {/* Header */}
+    <div className=" shadow rounded-lg p-6 mb-6 border border-gray-100">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h2 className="text-xl font-semibold text-gray-800">Practice Feed</h2>
-          <p className="text-xs text-gray-500">Fetching sample posts using <code className="text-blue-600">fetch()</code></p>
+          <h2 className="text-xl font-bold text-gray-800">Practice Feed</h2>
+          <p className="text-xs font-semibold text-gray-500">Fetching sample posts using <code className="text-gray-900">fetch()</code></p>
         </div>
-        <button onClick={fetchPosts} className="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-xs font-medium rounded-md">
+        <button onClick={fetchPosts} className="px-3 py-1.5 bg-emerald-500 font-bold text-white text-xs rounded-md">
           Refresh
         </button>
       </div>

@@ -5,16 +5,15 @@ import Header from './components/Header';
 import SummarySection from './components/SummarySection';
 import AddTaskForm from './components/AddTaskForm';
 import TaskList from './components/TaskList'; 
+import ApiTasks from './components/ApiTasks'; 
 
 export default function App() {
   const [tasks, setTasks] = useState(jsnTasks);
 
-  // 1. Add Task Handler (uses spread operator for immutable update)
   const handleAddTask = (newTask) => {
     setTasks([newTask, ...tasks]);
   };
 
-  // 2. Toggle Complete / Reopen Handler
   const handleToggleComplete = (id) => {
     setTasks(prevTasks =>
       prevTasks.map(task =>
@@ -36,13 +35,14 @@ export default function App() {
           remaining={remaining}
         />
 
-        {/* Add Task Form Component */}
         <AddTaskForm onAddTask={handleAddTask} />
 
         <TaskList 
           tasks={tasks} 
           onToggleComplete={handleToggleComplete} 
         />
+
+        <ApiTasks />
       </div>
     </div>
   );

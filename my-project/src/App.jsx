@@ -6,6 +6,7 @@ import SummarySection from './components/SummarySection';
 import AddTaskForm from './components/AddTaskForm';
 import TaskList from './components/TaskList'; 
 import ApiTasks from './components/ApiTasks'; 
+import JsonInspector from './components/JsonInspector';
 
 export default function App() {
   const [tasks, setTasks] = useState(jsnTasks);
@@ -42,7 +43,10 @@ export default function App() {
           onToggleComplete={handleToggleComplete} 
         />
 
+        
+
         <ApiTasks />
+      <JsonInspector sampleData={tasks} />
       </div>
     </div>
   );

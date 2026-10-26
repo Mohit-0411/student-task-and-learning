@@ -10,7 +10,9 @@ export default function TaskList({ tasks, onToggleComplete }) {
   }
 
   return (
+    
     <div className="space-y-3">
+      <h2 className='font-bold'>Task List</h2>
       {tasks.map((task) => (
         <TaskItem 
           key={task.id} 

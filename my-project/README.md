@@ -157,3 +157,6 @@ Loading: Displays loading indicator/skeleton while request is pending.
 Error: Catches network/status failures and displays a user-friendly error box.
 
 Success: Maps returned JSON array to feed list components.
+
+
+[![Architecture diagram of mohit-0411/student-task-and-learning](https://gitdiagram.com/mohit-0411/student-task-and-learning/diagram.png)](https://gitdiagram.com/mohit-0411/student-task-and-learning?utm_source=readme&utm_medium=picture)

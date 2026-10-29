@@ -46,7 +46,7 @@ export default function TaskItem({ task = {}, onToggleComplete }) {
           className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors shrink-0 cursor-pointer inline-flex items-center gap-1.5 ${
             completed 
               ? 'bg-gray-100 text-gray-600 hover:bg-gray-200' 
-              : 'border border-gray-200 bg-white text-gray-700 hover:bg-gray-50'
+              : 'border border-gray-200 bg-gray-50 text-gray-700 hover:bg-gray-200'
           }`}
         >
           <span>{completed ? '↺' : '✓'}</span>

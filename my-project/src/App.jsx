@@ -1,19 +1,19 @@
-// src/App.jsx
 import { useState, useEffect } from 'react';
 import jsnTasks from './data/tasks.json';
 import { calculateSummary } from './utils/TaskHelpers';
-import Header from './components/Header';
+import HeaderActions from './components/HeaderActions';
 import SummarySection from './components/SummarySection';
-import Modal from './components/Modal';
-import AddTaskForm from './components/AddTaskForm';
 import TaskList from './components/TaskList'; 
+import ApiTasks from './components/ApiTasks'; 
+import JsonInspector from './components/JsonInspector';
+import AddTaskForm from './components/AddTaskForm';
+import Modal from './components/Modal';
 
 const STORAGE_KEY = 'student_dashboard_tasks';
 
 const getInitialTasks = () => {
   const savedTasks = localStorage.getItem(STORAGE_KEY);
   if (!savedTasks) return jsnTasks;
-  
   try {
     return JSON.parse(savedTasks);
   } catch (err) {
@@ -24,50 +24,64 @@ const getInitialTasks = () => {
 
 export default function App() {
   const [tasks, setTasks] = useState(getInitialTasks);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeModal, setActiveModal] = useState(null); // 'task' | 'json' | null
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
   }, [tasks]);
 
   const handleAddTask = (newTask) => {
-    setTasks(prevTasks => [newTask, ...prevTasks]);
-    setIsModalOpen(false);
+    setTasks(prev => [newTask, ...prev]);
+    setActiveModal(null);
   };
 
   const handleToggleComplete = (id) => {
-    setTasks(prevTasks =>
-      prevTasks.map(task =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
+    setTasks(prev =>
+      prev.map(task => task.id === id ? { ...task, completed: !task.completed } : task)
     );
   };
 
-  const { total, completed, remaining } = calculateSummary(tasks);
+  const summary = calculateSummary(tasks);
 
   return (
-    <div className="min-h-screen bg-gray-50/50 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto space-y-6">
-        <Header onOpenModal={() => setIsModalOpen(true)} />
+    <div className="min-h-screen bg-gray-50 p-6 sm:p-8">
+      <div className="max-w-7xl mx-auto space-y-6">
         
-        <SummarySection 
-          total={total}
-          completed={completed}
-          remaining={remaining}
+        <HeaderActions 
+          onOpenTaskModal={() => setActiveModal('task')} 
+          onOpenJsonModal={() => setActiveModal('json')} 
         />
 
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <AddTaskForm 
-            onAddTask={handleAddTask} 
-            onClose={() => setIsModalOpen(false)} 
-          />
-        </Modal>
+        {/* Dashboard Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div className="lg:col-span-8 space-y-6">
+            <SummarySection {...summary} />
+            <TaskList tasks={tasks} onToggleComplete={handleToggleComplete} />
+          </div>
 
-        <TaskList 
-          tasks={tasks} 
-          onToggleComplete={handleToggleComplete} 
-        />
+          <div className="lg:col-span-4 space-y-6">
+            <ApiTasks />
+          </div>
+        </div>
+
       </div>
+
+      {/* Modals */}
+      <Modal isOpen={activeModal === 'task'} onClose={() => setActiveModal(null)}>
+        <AddTaskForm onAddTask={handleAddTask} onClose={() => setActiveModal(null)} />
+      </Modal>
+
+      <Modal isOpen={activeModal === 'json'} onClose={() => setActiveModal(null)}>
+        <div className="p-6">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-bold text-gray-800">JSON Data Inspector</h2>
+            <button onClick={() => setActiveModal(null)} className="text-gray-400 hover:text-gray-600 font-bold text-lg cursor-pointer">
+              ✕
+            </button>
+          </div>
+          <JsonInspector sampleData={tasks} />
+        </div>
+      </Modal>
     </div>
   );
 }

@@ -19,7 +19,7 @@ export default function JsonInspector({ sampleData }) {
   };
 
   return (
-    <div className="p-6 bg-white border rounded-lg shadow-sm max-w-2xl mx-auto">
+    <div className="p-6 bg-white border rounded-lg shadow-sm max-w-6xl mx-auto">
       <h2 className="text-lg font-semibold text-gray-800 mb-1">JSON Inspector</h2>
       <p className="text-sm text-gray-500 mb-4">Test `JSON.stringify()` and `JSON.parse()`.</p>
 
@@ -34,7 +34,7 @@ export default function JsonInspector({ sampleData }) {
           />
           <button
             onClick={handleParse}
-            className="mt-2 px-3 py-1.5 bg-emerald-500 text-white text-xs font-medium rounded hover:bg-emerald-600"
+            className="mt-2 px-3 py-1.5 bg-emerald-300 text-white text-xs font-medium rounded hover:bg-emerald-600"
           >
             Parse JSON
           </button>

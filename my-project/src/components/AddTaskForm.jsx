@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function AddTaskForm({ onAddTask }) {
+export default function AddTaskForm({ onAddTask, onClose }) {
   const [title, setTitle] = useState('');
   const [topicName, setTopicName] = useState('React');
   const [level, setLevel] = useState('Beginner');
@@ -45,8 +45,22 @@ export default function AddTaskForm({ onAddTask }) {
   };
 
   return (
-    <div className="bg-white shadow rounded-lg p-6 mb-6 border border-gray-100">
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">Add New Task</h2>
+    <div className="bg-white p-6 rounded-xl relative">
+      {/* Header with Title and Close 'X' Button */}
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl font-semibold text-gray-800">Add New Task</h2>
+        {onClose && (
+          <button
+            type="button"
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-600 text-2xl font-bold px-2 transition"
+            aria-label="Close modal"
+          >
+            &times;
+          </button>
+        )}
+      </div>
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wide mb-1">
@@ -57,7 +71,7 @@ export default function AddTaskForm({ onAddTask }) {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="e.g., Practise JavaScript objects"
-            className="w-full text-sm p-2.5 border border-gray-300 rounded-md "
+            className="w-full text-sm p-2.5 border border-gray-300 rounded-md"
             required
           />
         </div>
@@ -72,7 +86,7 @@ export default function AddTaskForm({ onAddTask }) {
               value={topicName}
               onChange={(e) => setTopicName(e.target.value)}
               placeholder="e.g., JavaScript"
-              className="w-full text-sm p-2.5 border border-gray-300 rounded-md "
+              className="w-full text-sm p-2.5 border border-gray-300 rounded-md"
               required
             />
           </div>
@@ -103,7 +117,7 @@ export default function AddTaskForm({ onAddTask }) {
               value={mentorName}
               onChange={(e) => setMentorName(e.target.value)}
               placeholder="e.g., Course Mentor"
-              className="w-full text-sm p-2.5 border border-gray-300 rounded-md "
+              className="w-full text-sm p-2.5 border border-gray-300 rounded-md"
             />
           </div>
 
@@ -116,7 +130,7 @@ export default function AddTaskForm({ onAddTask }) {
               value={mentorEmail}
               onChange={(e) => setMentorEmail(e.target.value)}
               placeholder="e.g., mentor@example.com"
-              className="w-full text-sm p-2.5 border border-gray-300 rounded-md "
+              className="w-full text-sm p-2.5 border border-gray-300 rounded-md"
             />
           </div>
         </div>
@@ -145,7 +159,7 @@ export default function AddTaskForm({ onAddTask }) {
               onChange={(e) => setEstimatedMinutes(e.target.value)}
               min="5"
               step="5"
-              className="w-full text-sm p-2.5 border border-gray-300 rounded-md "
+              className="w-full text-sm p-2.5 border border-gray-300 rounded-md"
               required
             />
           </div>
@@ -153,7 +167,7 @@ export default function AddTaskForm({ onAddTask }) {
 
         <button
           type="submit"
-          className="w-full py-2.5 px-4 bg-emerald-500 text-white font-medium rounded-md transition-colors shadow-sm"
+          className="w-full py-2.5 px-4 bg-emerald-300 hover:bg-emerald-500 text-white font-medium rounded-md transition-colors shadow-sm"
         >
           Add Task
         </button>

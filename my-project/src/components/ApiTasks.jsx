@@ -33,7 +33,7 @@ export default function ApiTasks() {
           <h2 className="text-xl font-bold text-gray-800">Practice Feed</h2>
           <p className="text-xs font-semibold text-gray-500">Fetching sample posts using <code className="text-gray-900">fetch()</code></p>
         </div>
-        <button onClick={fetchPosts} className="px-3 py-1.5 bg-emerald-500 font-bold text-white text-xs rounded-md">
+        <button onClick={fetchPosts} className="px-3 py-1.5 bg-emerald-300 font-bold text-white text-xs rounded-md">
           Refresh
         </button>
       </div>
